@@ -1,0 +1,304 @@
+/* ==========================================================================
+   LIVE LYRICS EXPERIENCE (PHASE 7 & 8)
+   ========================================================================== */
+.lyrics-overlay {
+  position: fixed;
+  inset: 0;
+  bottom: var(--player-height);
+  background-color: rgba(16, 17, 20, 0.94);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  z-index: 45;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  animation: lyrics-fade-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lyrics-overlay.open {
+  display: flex;
+}
+
+@keyframes lyrics-fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Lyrics Header */
+.lyrics-header {
+  height: 72px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-subtle);
+  background-color: rgba(16, 17, 20, 0.6);
+  flex-shrink: 0;
+}
+
+.lyrics-track-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.lyrics-track-art {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  flex-shrink: 0;
+}
+
+.lyrics-track-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.lyrics-track-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lyrics-track-artist {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.lyrics-controls-bar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Synced vs Full Lyrics Toggle */
+.lyrics-mode-toggle {
+  display: flex;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 3px;
+  gap: 2px;
+}
+
+.mode-toggle-btn {
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.mode-toggle-btn.active {
+  background-color: var(--accent-lime);
+  color: var(--text-inverse);
+  box-shadow: 0 0 12px var(--accent-lime-glow);
+}
+
+/* Devanagari Script Toggle */
+.devanagari-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.devanagari-toggle-btn:hover {
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.devanagari-toggle-btn.active {
+  background-color: rgba(184, 243, 91, 0.15);
+  border-color: var(--accent-lime);
+  color: var(--accent-lime);
+}
+
+.lyrics-close-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.lyrics-close-btn:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-surface-hover);
+  transform: rotate(90deg);
+}
+
+/* Lyrics Body / Scroller */
+.lyrics-viewport {
+  flex-grow: 1;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  padding: 80px 40px 180px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.lyrics-content-wrap {
+  max-width: 840px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  text-align: left;
+}
+
+/* Stanza Grouping */
+.lyric-stanza {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 20px;
+  border-radius: var(--radius-lg);
+  transition: background-color var(--transition-normal);
+}
+
+.lyric-stanza.active-stanza {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+/* Lyric Line (Karaoke / Synced) */
+.lyric-line {
+  font-size: clamp(1.4rem, 2.5vw, 2.1rem);
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--text-muted);
+  opacity: 0.35;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  padding: 4px 0;
+  border-radius: var(--radius-sm);
+  letter-spacing: -0.01em;
+}
+
+.lyric-line:hover {
+  opacity: 0.75;
+  color: var(--text-primary);
+}
+
+/* Active Highlight Line */
+.lyric-line.active {
+  color: var(--accent-lime);
+  opacity: 1;
+  font-size: clamp(1.6rem, 2.8vw, 2.35rem);
+  transform: scale(1.02) translateX(8px);
+  text-shadow: 0 0 24px var(--accent-lime-glow);
+}
+
+/* Upcoming Lines */
+.lyric-line.upcoming {
+  color: var(--text-secondary);
+  opacity: 0.65;
+}
+
+/* Devanagari typography style */
+.devanagari-text {
+  font-family: var(--font-devanagari);
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
+/* Plain / Full Lyrics Mode */
+.lyrics-full-mode {
+  font-size: 1.25rem;
+  line-height: 2;
+  color: var(--text-secondary);
+  white-space: pre-line;
+}
+
+/* Lyrics Attribution & Footer */
+.lyrics-source-footer {
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.lyrics-source-link {
+  color: var(--accent-lime);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Lyrics Unavailable State */
+.lyrics-unavailable {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+  padding: 100px 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.lyrics-unavailable-icon {
+  font-size: 3.5rem;
+}
+
+.lyrics-unavailable-msg {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.lyrics-unavailable-sub {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.lyrics-external-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  color: var(--accent-lime);
+  font-weight: 700;
+  font-size: 0.92rem;
+  transition: all var(--transition-fast);
+}
+
+.lyrics-external-btn:hover {
+  background-color: var(--accent-lime);
+  color: var(--text-inverse);
+  box-shadow: 0 0 16px var(--accent-lime-glow);
+}

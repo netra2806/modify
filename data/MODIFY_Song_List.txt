@@ -1,0 +1,92 @@
+MODIFY — Songs grouped by mood and language
+Note: This is a song-title/artist list, not audio files. Use licensed services to stream or download tracks.
+
+HAPPY
+  Hindi
+    • Ilahi — Arijit Singh
+    • Gallan Goodiyaan — Yashita Sharma, Manish Kumar Tipu & others
+    • Love You Zindagi — Jasleen Royal
+  Marathi
+    • Zingaat — Ajay–Atul
+    • Mala Jau Dya Na Ghari — Avadhoot Gupte
+  English
+    • Happy — Pharrell Williams
+    • Good Life — OneRepublic
+
+CHILL
+  Hindi
+    • Shaam — Amit Trivedi, Nikhil D’Souza & Neuman Pinto
+    • Iktara — Kavita Seth
+  Marathi
+    • Kitida Navyane — Mandar Apte, Aarya Ambekar
+    • Man Udhan Varyache — Shankar Mahadevan
+  English
+    • Sunset Lover — Petit Biscuit
+    • Ocean Eyes — Billie Eilish
+
+ENERGETIC
+  Hindi
+    • Malhari — Vishal Dadlani
+    • Kar Har Maidaan Fateh — Sukhwinder Singh, Shreya Ghoshal
+  Marathi
+    • Apsara Aali — Bela Shende
+    • Wajle Ki Bara — Bela Shende
+  English
+    • Believer — Imagine Dragons
+    • Can’t Stop the Feeling! — Justin Timberlake
+
+ROMANTIC
+  Hindi
+    • Tum Se Hi — Mohit Chauhan
+    • Raataan Lambiyan — Jubin Nautiyal, Asees Kaur
+  Marathi
+    • Yad Lagla — Ajay Gogavale
+    • Sairat Zaala Ji — Chinmayi Sripada, Ajay Gogavale
+  English
+    • Perfect — Ed Sheeran
+    • Until I Found You — Stephen Sanchez
+
+SAD
+  Hindi
+    • Agar Tum Saath Ho — Alka Yagnik, Arijit Singh
+    • Channa Mereya — Arijit Singh
+  Marathi
+    • Kadhi Tu — Hrishikesh Ranade
+    • Jeev Rangala — Anand Shinde, Shreya Ghoshal
+  English
+    • The Night We Met — Lord Huron
+    • Someone Like You — Adele
+
+FOCUS
+  Hindi
+    • Shaam Tanha — Agnee
+    • Aazaadiyan — A.R. Rahman, Mohit Chauhan, Neeti Mohan
+  Marathi
+    • Mauli Mauli — Ajay–Atul
+    • Gaarva — Milind Ingle
+  English
+    • Weightless — Marconi Union
+    • Experience — Ludovico Einaudi
+
+PARTY
+  Hindi
+    • Kala Chashma — Amar Arshi, Badshah, Neha Kakkar
+    • Nashe Si Chadh Gayi — Arijit Singh
+  Marathi
+    • Dolby Walya — Nagesh Morvekar, Earl Edgar
+    • Bring It On — Ajay–Atul
+  English
+    • Levitating — Dua Lipa
+    • Uptown Funk — Mark Ronson ft. Bruno Mars
+
+TRAVEL
+  Hindi
+    • Safarnama — Lucky Ali
+    • Khaabon Ke Parinday — Alyssa Mendonsa, Mohit Chauhan
+  Marathi
+    • Yad Lagla (Reprise) — Swapnil Bandodkar
+    • Hi Chaal Turu Turu — Jaywant Kulkarni
+  English
+    • Adventure of a Lifetime — Coldplay
+    • On Top of the World — Imagine Dragons
+

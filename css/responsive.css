@@ -1,0 +1,208 @@
+/* ==========================================================================
+   RESPONSIVE DESIGN & ACCESSIBILITY (PHASE 1, 2 & 10)
+   ========================================================================== */
+
+/* Mobile Bottom Navigation Bar */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: var(--player-height);
+  left: 0;
+  right: 0;
+  height: 56px;
+  background-color: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-top: 1px solid var(--border-subtle);
+  z-index: 48;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 12px;
+}
+
+.mobile-nav-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast);
+}
+
+.mobile-nav-btn.active {
+  color: var(--accent-lime);
+}
+
+.mobile-nav-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+/* Tablet & Smaller Desktops (max-width: 1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 220px;
+  }
+
+  .content-container {
+    padding: 24px 20px 60px 20px;
+    gap: 32px;
+  }
+
+  .track-list-header,
+  .track-row {
+    grid-template-columns: 40px 1fr 140px 80px 100px;
+  }
+
+  .track-album-cell {
+    display: none;
+  }
+
+  .player-bar {
+    grid-template-columns: 260px 1fr 220px;
+    padding: 0 16px;
+  }
+}
+
+/* Tablets and Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  :root {
+    --player-height: 84px;
+    --topbar-height: 64px;
+  }
+
+  .app-sidebar {
+    display: none;
+  }
+
+  .mobile-bottom-nav {
+    display: flex;
+  }
+
+  .mobile-brand {
+    display: flex;
+  }
+
+  .app-topbar {
+    padding: 0 16px;
+  }
+
+  .content-container {
+    padding: 16px 16px 120px 16px;
+    gap: 24px;
+  }
+
+  .hero-section {
+    padding: 28px 24px;
+    border-radius: var(--radius-lg);
+  }
+
+  .hero-headline {
+    font-size: 2.1rem;
+  }
+
+  .hero-subtext {
+    font-size: 0.96rem;
+  }
+
+  .mood-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+  }
+
+  .mood-card {
+    padding: 16px;
+    border-radius: var(--radius-md);
+  }
+
+  .mood-emoji {
+    font-size: 1.6rem;
+  }
+
+  .mood-name {
+    font-size: 1.05rem;
+  }
+
+  .mood-tagline {
+    font-size: 0.75rem;
+  }
+
+  /* Track list simplification on mobile */
+  .track-list-header {
+    display: none;
+  }
+
+  .track-row {
+    grid-template-columns: 36px 1fr 80px;
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .track-badge-cell,
+  .track-album-cell,
+  .track-duration-cell {
+    display: none;
+  }
+
+  /* Mobile player adjustments */
+  .player-bar {
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    padding: 0 16px;
+  }
+
+  .player-center {
+    display: none;
+  }
+
+  .player-right .volume-container {
+    display: none;
+  }
+
+  .player-right {
+    gap: 8px;
+  }
+
+  .mobile-play-btn {
+    display: flex !important;
+  }
+
+  .lyrics-header {
+    padding: 0 20px;
+  }
+
+  .lyrics-viewport {
+    padding: 40px 20px 140px 20px;
+  }
+
+  .lyric-line {
+    font-size: 1.35rem;
+  }
+
+  .lyric-line.active {
+    font-size: 1.55rem;
+  }
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-pulse-dot {
+    animation: none;
+  }
+}
